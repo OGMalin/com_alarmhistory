@@ -57,6 +57,5 @@
 	<media destination="com_alarmhistory" folder="media">
 		<folder>css</folder>
 		<folder>js</folder>
-		<filename>index.html</filename>
 	</media>
 </extension>
