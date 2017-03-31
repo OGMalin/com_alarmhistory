@@ -43,7 +43,7 @@ class AlarmhistoryViewSections extends JViewLegacy
 	protected function addToolbar()
 	{
 		// Add the admin view title
-		JToolbarHelper::title(JText::_('COM_ALARMHISTORY_SECTIONS_TITLE'),'section');
+		JToolbarHelper::title(JText::_('COM_ALARMHISTORY_TITLE_SECTIONS'),'section');
 		
 		JToolbarHelper::addNew('section.add','JTOOLBAR_NEW');
 		JToolbarHelper::editList('section.edit','JTOOLBAR_EDIT');

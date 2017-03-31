@@ -33,7 +33,7 @@ function updateSiteList(section)
 	s="<option value='0'></option>\n";
 	for (var i=0; i<sites.length; i++)
 	{
-		if (!section || (section==sites[i][3]))
+		if (!section || (section==sites[i][6]))
 			s += "<option value='"+sites[i][0]+"'>"+sites[i][1]+"</options>\n";
 	}
 	jQuery('#site').html(s);
@@ -101,9 +101,9 @@ function getList()
 	var sec='';
 	var sit='';
 	if (sitI>=0)
-		sit="&location="+sites[sitI][2];
+		sit="&district="+sites[sitI][2]+"&location="+sites[sitI][3]+"&region="+sites[sitI][4]+"&field="+sites[sitI][5];
 	else if (secI>=0)
-		sec="&district="+sections[secI][2];
+		sec="&district="+sections[secI][2]+"&location="+sections[secI][3]+"&region="+sections[secI][4]+"&field="+sections[secI][5];
 	var searchtext="&searchtext=" + jQuery('#searchtext').val();
 	var s = jQuery('#setdate').val();
 	var d = Date.UTC(parseInt(s.substr(6,4)),parseInt(s.substr(3,2))-1,parseInt(s.substr(0,2)));
@@ -221,7 +221,7 @@ function checkIfExist(index)
 	// Område
 	for (i=0;i<sections.length;i++)
 	{
-		if (sections[i][2]==msgList[index].DISTRICT)
+		if (sections[i][5]==msgList[index].FIELD)
 		{
 			sec='';
 			break;
@@ -231,7 +231,7 @@ function checkIfExist(index)
 	// Site
 	for (i=0;i<sites.length;i++)
 	{
-		if (sites[i][2]==msgList[index].LOCATION)
+		if (sites[i][4]==msgList[index].REGION)
 		{
 			sit='';
 			break;
@@ -288,7 +288,7 @@ function showProperty(index)
 	var s='';
 	for (i=0;i<sections.length;i++)
 	{
-		if (sections[i][2]==msgList[index].DISTRICT)
+		if (sections[i][5]==msgList[index].FIELD)
 		{
 			s+=sections[i][1]+'('+sections[i][0]+') ';
 		}
@@ -298,7 +298,7 @@ function showProperty(index)
 	s='';
 	for (i=0;i<sites.length;i++)
 	{
-		if (sites[i][2]==msgList[index].LOCATION)
+		if (sites[i][4]==msgList[index].REGION)
 		{
 			s+=sites[i][1]+'('+sites[i][0]+') ';
 		}

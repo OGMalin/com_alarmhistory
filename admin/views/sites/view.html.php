@@ -43,7 +43,7 @@ class AlarmhistoryViewSites extends JViewLegacy
 	protected function addToolbar()
 	{
 		// Add the admin view title
-		JToolbarHelper::title(JText::_('COM_ALARMHISTORY_SITES_TITLE'),'site');
+		JToolbarHelper::title(JText::_('COM_ALARMHISTORY_TITLE_SITES'),'site');
 		
 		JToolbarHelper::addNew('site.add','JTOOLBAR_NEW');
 		JToolbarHelper::editList('site.edit','JTOOLBAR_EDIT');

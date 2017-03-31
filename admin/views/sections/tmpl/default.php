@@ -61,6 +61,15 @@ $sortFields = $this->getSortFields();
 						<?php echo JHtml::_('grid.sort', 'COM_ALARMHISTORY_HEADING_DISTRICT', 'a.DISTRICT', $listDirn, $listOrder); ?>
 					</th>
 					<th class="nowrap">
+						<?php echo JHtml::_('grid.sort', 'COM_ALARMHISTORY_HEADING_LOCATION', 'a.LOCATION', $listDirn, $listOrder); ?>
+					</th>
+										<th class="nowrap">
+						<?php echo JHtml::_('grid.sort', 'COM_ALARMHISTORY_HEADING_REGION', 'a.REGION', $listDirn, $listOrder); ?>
+					</th>
+					<th class="nowrap">
+						<?php echo JHtml::_('grid.sort', 'COM_ALARMHISTORY_HEADING_FIELD', 'a.FIELD', $listDirn, $listOrder); ?>
+					</th>
+					<th class="nowrap">
 						<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 					</th>
 				</tr>
@@ -98,6 +107,9 @@ $sortFields = $this->getSortFields();
 							</a>
 						</td>
 						<td><?php echo $this->escape($item->DISTRICT); ?></td>
+						<td><?php echo $this->escape($item->LOCATION); ?></td>
+						<td><?php echo $this->escape($item->REGION); ?></td>
+						<td><?php echo $this->escape($item->FIELD); ?></td>
 						<td><?php echo $this->escape($item->id); ?></td>
 					</tr>
 				<?php endforeach; ?>

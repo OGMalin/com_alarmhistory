@@ -38,7 +38,7 @@ class AlarmhistoryViewAlarmhistory extends JViewLegacy
 		
 		// Hent områder
 		$query=$db->getQuery(true);
-		$query->select('id, title, DISTRICT');
+		$query->select('id, title, DISTRICT, LOCATION, REGION, FIELD');
 		$query->from('#__alarmhistory_section');
 		$query->order('ordering');
 		$db->setQuery($query);
@@ -47,13 +47,19 @@ class AlarmhistoryViewAlarmhistory extends JViewLegacy
 			$results=$db->loadRowList();
 			foreach ($results as $result)
 			{
-				$doc->addScriptDeclaration("sections.push(new Array('".$result[0]."','".$result[1]."','".$result[2]."'));");
+				$doc->addScriptDeclaration("sections.push(new Array('".
+						$result[0]."','".
+						$result[1]."','".
+						$result[2]."','".
+						$result[3]."','".
+						$result[4]."','".
+						$result[5]."'));");
 			}
 		};
 		
 		// Hent stasjoner
 		$query=$db->getQuery(true);
-		$query->select('id, title, LOCATION, section');
+		$query->select('id, title, DISTRICT, LOCATION, REGION, FIELD, section');
 		$query->from('#__alarmhistory_site');
 		$query->order('ordering');
 		$db->setQuery($query);
@@ -66,7 +72,10 @@ class AlarmhistoryViewAlarmhistory extends JViewLegacy
 						$result[0]."','".
 						$result[1]."','".
 						$result[2]."','".
-						$result[3]."'));");
+						$result[3]."','".
+						$result[4]."','".
+						$result[5]."','".
+						$result[6]."'));");
 			}
 		};
 		

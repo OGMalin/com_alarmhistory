@@ -22,6 +22,9 @@ class AlarmhistoryModelSections extends JModelList
  					'id', 'a.id',
  					'title', 'a.title',
  					'DISTRICT', 'a.DISTRICT',
+ 					'LOCATION', 'a.LOCATION',
+ 					'REGION', 'a.REGION',
+ 					'FIELD', 'a.FIELD',
  					'ordering', 'a.ordering'
  			);
  		}

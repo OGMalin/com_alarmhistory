@@ -1,7 +1,10 @@
 CREATE TABLE `#__alarmhistory_site` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
+  `DISTRICT` varchar(21) NOT NULL DEFAULT '0',
   `LOCATION` int(11) NOT NULL DEFAULT '0',
+  `REGION` int(11) NOT NULL DEFAULT '0',
+  `FIELD` int(11) NOT NULL DEFAULT '0',
   `section` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -11,7 +14,10 @@ CREATE TABLE `#__alarmhistory_site` (
 CREATE TABLE `#__alarmhistory_section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL DEFAULT '',
-  `DISTRICT` varchar(21) NOT NULL DEFAULT '',
+  `DISTRICT` varchar(21) NOT NULL DEFAULT '0',
+  `LOCATION` int(11) NOT NULL DEFAULT '0',
+  `REGION` int(11) NOT NULL DEFAULT '0',
+  `FIELD` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `ordering` (`ordering`)

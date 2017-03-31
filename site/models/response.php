@@ -17,7 +17,7 @@ jimport('joomla.application.component.modelitem');
 class AlarmhistoryModelResponse extends JModelItem
 {
 	
-	public function queryAlarmhistory($start, $limit, $eventdate, $district, $location, $eventindex, $searchtext)
+	public function queryAlarmhistory($start, $limit, $eventdate, $district, $location, $region, $field, $eventindex, $searchtext)
 	{
 		$iFix=new iFixHelper();
 		
@@ -25,6 +25,8 @@ class AlarmhistoryModelResponse extends JModelItem
 		$iFix->eventdate = $eventdate;
 		$iFix->district=$district;
 		$iFix->location=$location;
+		$iFix->region=$region;
+		$iFix->field=$field;
 		$iFix->searchtext=$searchtext;
 		$iFix->start=$start;
 		$iFix->eventindex=$eventindex;

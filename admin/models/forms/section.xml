@@ -13,5 +13,17 @@
       size="40" label="COM_ALARMHISTORY_DISTRICT_LABEL"
       description="COM_ALARMHISTORY_FIELD_DISTRICT_DESC" />
 
+    <field name="LOCATION" type="text" class="inputbox"
+      size="40" label="COM_ALARMHISTORY_LOCATION_LABEL"
+      description="COM_ALARMHISTORY_FIELD_LOCATION_DESC" />
+
+    <field name="REGION" type="text" class="inputbox"
+      size="40" label="COM_ALARMHISTORY_REGION_LABEL"
+      description="COM_ALARMHISTORY_FIELD_REGION_DESC" />
+
+    <field name="FIELD" type="text" class="inputbox"
+      size="40" label="COM_ALARMHISTORY_FIELD_LABEL"
+      description="COM_ALARMHISTORY_FIELD_FIELD_DESC" />
+
   </fieldset>
 </form>

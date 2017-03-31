@@ -131,7 +131,8 @@ class iFixHelper
 		$select.=",NODEPHYS";
 		$select.=",ALMX1";
 		$select.=",ALMX2";
-		$select.=",TO_CHAR(CAST((EVENTTIME AT LOCAL) AS DATE),'DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
+//		$select.=",TO_CHAR(CAST((EVENTTIME AT LOCAL) AS DATE),'DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
+		$select.=",TO_CHAR(from_tz(CAST(EVENTTIME AS TIMESTAMP), 'UTC') AT TIME ZONE 'Europe/Oslo','DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
 		$select.=",EVENTTIME";
 		$select.=",COMMENTED";
 		$select.=",SYNT";
@@ -178,6 +179,10 @@ class iFixHelper
  			$where[$whereId++]="(DISTRICT = " . $this->district . ")";
  		if ($this->location>0)
  			$where[$whereId++]="(LOCATION = " . $this->location . ")";
+ 		if ($this->field>0)
+ 			$where[$whereId++]="(FIELD = " . $this->field . ")";
+ 		if ($this->region>0)
+ 			$where[$whereId++]="(REGION = " . $this->region . ")";
  		if ($this->searchtext!='')
  			$where[$whereId++]="(UPPER(DESCRIPTION) LIKE '%" . strtoupper($this->searchtext) . "%')";
  		if ($this->eventindex)
@@ -230,7 +235,8 @@ class iFixHelper
 		$select.=",NODEPHYS";
 		$select.=",ALMX1";
 		$select.=",ALMX2";
-		$select.=",TO_CHAR(CAST((EVENTTIME AT LOCAL) AS DATE),'DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
+		$select.=",TO_CHAR(from_tz(CAST(EVENTTIME AS TIMESTAMP), 'UTC') AT TIME ZONE 'Europe/Oslo','DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
+//		$select.=",TO_CHAR(CAST((EVENTTIME AT LOCAL) AS DATE),'DD-MM-YYYY HH24:MI:SS') AS EVENTDATE";
 		$select.=",EVENTTIME";
 		$select.=",COMMENTED";
 		$select.=",SYNT";

@@ -27,9 +27,11 @@ class AlarmhistoryControllerResponse extends JControllerLegacy
 		$eventdate=$this->input->getInt('eventdate',0);
 		$district=$this->input->getInt('district',0);
 		$location=$this->input->getInt('location',0);
+		$region=$this->input->getInt('region',0);
+		$field=$this->input->getInt('field',0);
 		$eventindex=$this->input->getInt('eventindex',0);
 		$searchtext=$this->input->getString('searchtext','');
-		$res=$model->queryAlarmhistory($start, $limit, $eventdate, $district, $location, $eventindex, $searchtext);
+		$res=$model->queryAlarmhistory($start, $limit, $eventdate, $district, $location, $region, $field, $eventindex, $searchtext);
 		
 		$doc->setMimeEncoding('application/json');
 		echo json_encode($res);
